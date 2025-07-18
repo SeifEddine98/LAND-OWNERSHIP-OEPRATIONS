@@ -31,18 +31,20 @@ Before running the backend, make sure to configure the following in the `applica
   spring.datasource.username=your_username
   spring.datasource.password=your_password
   
-## 🎨 Frontend Setup (AngularTS)
+## 🎨 Frontend Setup (AngularTS + IonicTS)
 
 After cloning the project, navigate to the frontend folder:
 cd frontend
 Then install the required dependencies:
 npm install --legacy-peer-deps
-Once installed, you can start the development server:
-ng serve
+Then use this command:
+set NODE_OPTIONS=--openssl-legacy-provider
+Once finished, you can start the development server:
+ionic serve
 
 📂 Project Structure
 java
-IM.CODING/
+LAND-OWNERSHIP-OEPRATIONS/
 ├── BACK-END/      → Spring Boot (Java)
 ├── FRONT-END/     → AngularTS (Typescript) +  IonicTS (Typescript)
 └── README.md
