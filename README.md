@@ -1,4 +1,4 @@
-# IM.CODING
+# LAND-OWNERSHIP-OEPRATIONS
 
 A fullstack mobile application for managing Land Ownership office that includes user authentication, land ownership operations, and a modern front-end interface.
 
