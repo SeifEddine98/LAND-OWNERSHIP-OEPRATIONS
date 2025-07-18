@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/choix-conslt"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+         إستخلاص معاليم الإطلاع على رسم 
+         <ion-icon name="card-outline"></ion-icon>
+              </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img src="{{immg.carteff}}">      
+    </ion-img>
+  </ion-card> 
+  <form #carteForm="ngForm" (ngSubmit)="save(carteForm.value)">
+    <ion-input type="hidden" name="href" [(ngModel)]="carte.href">
+    </ion-input>
+    <ion-grid>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+        <ion-input type="number" name="numCarte" placeholder="رقم البطاقة" [(ngModel)]="carte.numCarte" required #numCarte></ion-input>
+  </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+  <div>
+  <ion-item>
+    <ion-card>
+    <div class="ion-text-end">   
+      <ion-input type="number" name="codeInternet" placeholder="الرقم السري" [(ngModel)]="carte.codeInternet" required #codeInternet></ion-input>
+    </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" expand="block" [disabled]="!carteForm.form.valid">دفع
+  <ion-icon name="cash-outline"></ion-icon>
+
+</ion-button>
+
+</form>
+
+</ion-content>

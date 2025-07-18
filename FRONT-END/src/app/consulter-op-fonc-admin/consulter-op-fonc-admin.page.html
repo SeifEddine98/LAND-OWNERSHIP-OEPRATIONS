@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menuadmin"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+الكشف على العمليات العقارية
+<ion-icon name="document-text-outline"></ion-icon>
+      </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form #extraitForm="ngForm" >
+      <ion-input type="hidden" name="href" [(ngModel)]="extrait.href">
+      </ion-input>
+      <ion-grid>
+  <ion-row class="ion-float-end">
+    <ion-col class="ion-float-end">
+      <div>  
+<ion-item>
+  <ion-card>
+  <div class="ion-text-end">    
+<ion-input type="number" name="numtitre" placeholder="رقم الرسم العقاري" [(ngModel)]="extrait.numtitre" required #numtitre></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+  <ion-label color="primary"> <div class="ion-text-end"> :اليومية من </div></ion-label>
+<div class="ion-text-end">    
+<ion-input type="date" name="dated" ngModel="" required #dated></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+  <ion-label color="primary"> <div class="ion-text-end"> :اليومية إلى </div></ion-label>
+<div class="ion-text-end">    
+<ion-input type="date" name="datef" ngModel="" required #datef></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+
+</ion-grid>
+<ion-button type="submit" [disabled]="!extraitForm.form.valid" (click)="save(extraitForm.value,dated.value,datef.value)"  >بحث
+  <ion-icon name="search-outline"></ion-icon>
+</ion-button>
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>العمليات العقارية بعنوان الرسم العقاري</h1>
+  <h2>{{extrait.numtitre}}</h2>
+<hr>
+<table id="users">
+  
+    <tr>
+      <th scope="col">
+        <div class="ion-text-end">
+          النتيجة 
+        </div>
+        </th>
+        <th scope="col">
+          <div class="ion-text-end">
+            الولاية 
+          </div>
+          </th>
+        <th scope="col">
+          <div class="ion-text-end">
+            العملية العقارية 
+          </div>
+          </th>
+          <th scope="col">
+            <div class="ion-text-end">
+              المودع 
+            </div>
+            </th>
+            <th scope="col">
+              <div class="ion-text-end">
+                عدد الوصل 
+              </div>
+              </th>
+
+      <th scope="col">
+        <div class="ion-text-end">
+        اليومية 
+      </div>
+      </th>
+    </tr>
+
+
+<tr *ngFor="let extrait of extraits">
+  <td>
+    <div class="ion-text-end">
+    {{extrait.resultat}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{extrait.gouv}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{extrait.typop}}
+  </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{extrait.deposant}}
+  </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{extrait.numdema}}
+  </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+      {{extrait.datecn | date: 'yyyy/MM/dd'}}
+    </div>
+  </td>
+
+
+</tr>
+</table>
+<ion-button expand="block" [routerLink]="['/menuadmin']">رجوع
+  <ion-icon name="arrow-back-outline"></ion-icon>
+</ion-button> 
+</ion-content>

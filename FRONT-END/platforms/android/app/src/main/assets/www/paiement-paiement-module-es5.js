@@ -1,0 +1,328 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["paiement-paiement-module"], {
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/paiement/paiement.page.html":
+  /*!***********************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/paiement/paiement.page.html ***!
+    \***********************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPaiementPaiementPageHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar color=\"secondary\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/choix-conslt\"></ion-back-button>\n    </ion-buttons>\n    <ion-title size=\"large\">\n      <div class=\"ion-text-end\">\n         إستخلاص معاليم الإطلاع على رسم \n         <ion-icon name=\"card-outline\"></ion-icon>\n              </div>\n      </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-img src=\"{{immg.carteff}}\">      \n    </ion-img>\n  </ion-card> \n  <form #carteForm=\"ngForm\" (ngSubmit)=\"save(carteForm.value)\">\n    <ion-input type=\"hidden\" name=\"href\" [(ngModel)]=\"carte.href\">\n    </ion-input>\n    <ion-grid>\n      <ion-row class=\"ion-float-end\">\n        <ion-col class=\"ion-float-end\">\n          <div>  \n    <ion-item>\n      <ion-card>\n      <div class=\"ion-text-end\">    \n        <ion-input type=\"number\" name=\"numCarte\" placeholder=\"رقم البطاقة\" [(ngModel)]=\"carte.numCarte\" required #numCarte></ion-input>\n  </div>\n</ion-card>\n  </ion-item>\n</div>\n</ion-col>\n</ion-row>\n<ion-row class=\"ion-float-end\">\n  <ion-col class=\"ion-float-end\">\n  <div>\n  <ion-item>\n    <ion-card>\n    <div class=\"ion-text-end\">   \n      <ion-input type=\"number\" name=\"codeInternet\" placeholder=\"الرقم السري\" [(ngModel)]=\"carte.codeInternet\" required #codeInternet></ion-input>\n    </div>\n</ion-card>\n  </ion-item>\n</div>\n</ion-col>\n</ion-row>\n</ion-grid>\n<ion-button type=\"submit\" expand=\"block\" [disabled]=\"!carteForm.form.valid\">دفع\n  <ion-icon name=\"cash-outline\"></ion-icon>\n\n</ion-button>\n\n</form>\n\n</ion-content>\n";
+    /***/
+  },
+
+  /***/
+  "./src/app/paiement/paiement-routing.module.ts":
+  /*!*****************************************************!*\
+    !*** ./src/app/paiement/paiement-routing.module.ts ***!
+    \*****************************************************/
+
+  /*! exports provided: PaiementPageRoutingModule */
+
+  /***/
+  function srcAppPaiementPaiementRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PaiementPageRoutingModule", function () {
+      return PaiementPageRoutingModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _paiement_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./paiement.page */
+    "./src/app/paiement/paiement.page.ts");
+
+    const routes = [{
+      path: '',
+      component: _paiement_page__WEBPACK_IMPORTED_MODULE_3__["PaiementPage"]
+    }];
+    let PaiementPageRoutingModule = class PaiementPageRoutingModule {};
+    PaiementPageRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+      exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })], PaiementPageRoutingModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/paiement/paiement.module.ts":
+  /*!*********************************************!*\
+    !*** ./src/app/paiement/paiement.module.ts ***!
+    \*********************************************/
+
+  /*! exports provided: PaiementPageModule */
+
+  /***/
+  function srcAppPaiementPaiementModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PaiementPageModule", function () {
+      return PaiementPageModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var _paiement_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./paiement-routing.module */
+    "./src/app/paiement/paiement-routing.module.ts");
+    /* harmony import */
+
+
+    var _paiement_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./paiement.page */
+    "./src/app/paiement/paiement.page.ts");
+
+    let PaiementPageModule = class PaiementPageModule {};
+    PaiementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _paiement_routing_module__WEBPACK_IMPORTED_MODULE_5__["PaiementPageRoutingModule"]],
+      declarations: [_paiement_page__WEBPACK_IMPORTED_MODULE_6__["PaiementPage"]]
+    })], PaiementPageModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/paiement/paiement.page.scss":
+  /*!*********************************************!*\
+    !*** ./src/app/paiement/paiement.page.scss ***!
+    \*********************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppPaiementPaiementPageScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhaWVtZW50L3BhaWVtZW50LnBhZ2Uuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/paiement/paiement.page.ts":
+  /*!*******************************************!*\
+    !*** ./src/app/paiement/paiement.page.ts ***!
+    \*******************************************/
+
+  /*! exports provided: PaiementPage */
+
+  /***/
+  function srcAppPaiementPaiementPageTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PaiementPage", function () {
+      return PaiementPage;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _shared_carteservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shared/carteservice.service */
+    "./src/app/shared/carteservice.service.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+    let PaiementPage = class PaiementPage {
+      constructor(route, router, carteService, alertController) {
+        this.route = route;
+        this.router = router;
+        this.carteService = carteService;
+        this.alertController = alertController;
+        this.carte = {};
+        this.immg = {
+          carteff: "assets/images/carte.jpg"
+        };
+      }
+
+      ngOnInit() {}
+
+      gotoList() {
+        this.router.navigate(['/consulter-titre-foncier']);
+      }
+
+      presentAlert1() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+          const alert = yield this.alertController.create({
+            header: 'خطأ',
+            message: 'الرجاء التثبت من رقم البطاقة المذكور : الرقم المذكور غير موجود ',
+            buttons: ['إعادة المحاولة']
+          });
+          yield alert.present();
+        });
+      }
+
+      presentAlert2() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+          const alert = yield this.alertController.create({
+            header: 'خطأ',
+            message: 'الرجاء التثبت من المعطيات المذكورة',
+            buttons: ['إعادة المحاولة']
+          });
+          yield alert.present();
+        });
+      }
+
+      presentAlert3() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+          const alert = yield this.alertController.create({
+            header: 'خطأ',
+            message: 'الرصيد الموجود بهذه البطاقة غير كافي لإجراء هذه العملية',
+            buttons: ['إعادة المحاولة']
+          });
+          yield alert.present();
+        });
+      }
+
+      presentAlert4() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+          const alert = yield this.alertController.create({
+            header: ' ! لقد نجحت عملية الإستخلاص ',
+            message: 'لقد تم خصم 3 دنانير من حساب هذه البطاقة',
+            buttons: ['حسنا']
+          });
+          yield alert.present();
+        });
+      }
+
+      save(form) {
+        console.log(form);
+        this.carteService.payerConslt(form).subscribe(result => {
+          console.log(result);
+
+          if (result == 0) {
+            this.presentAlert1();
+          }
+
+          if (result == 1) {
+            this.presentAlert3();
+          }
+
+          if (result == 2) {
+            this.presentAlert2();
+          }
+
+          if (result == 3) {
+            this.presentAlert4();
+            this.gotoList();
+          }
+        });
+      }
+
+    };
+
+    PaiementPage.ctorParameters = () => [{
+      type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
+    }, {
+      type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+    }, {
+      type: _shared_carteservice_service__WEBPACK_IMPORTED_MODULE_3__["CarteserviceService"]
+    }, {
+      type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]
+    }];
+
+    PaiementPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-paiement',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./paiement.page.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/paiement/paiement.page.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./paiement.page.scss */
+      "./src/app/paiement/paiement.page.scss")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _shared_carteservice_service__WEBPACK_IMPORTED_MODULE_3__["CarteserviceService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]])], PaiementPage);
+    /***/
+  }
+}]);
+//# sourceMappingURL=paiement-paiement-module-es5.js.map

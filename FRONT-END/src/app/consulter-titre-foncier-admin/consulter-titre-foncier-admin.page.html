@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menuadmin"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+الإطلاع على رسم عقاري
+<ion-icon name="document-text-outline"></ion-icon>
+      </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form #titreForm="ngForm" >
+      <ion-input type="hidden" name="href" [(ngModel)]="titre.href">
+      </ion-input>
+      <ion-grid>
+  <ion-row class="ion-float-end">
+    <ion-col class="ion-float-end">
+      <div>  
+<ion-item>
+  <ion-card>
+  <div class="ion-text-end">    
+<ion-input type="number" name="numtitre" placeholder="رقم الرسم العقاري" [(ngModel)]="titre.numtitre" required #numtitre></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" [disabled]="!titreForm.form.valid"  (click)="save(titreForm.value)">بحث
+  <ion-icon name="search-outline"></ion-icon>
+</ion-button>
+</form>
+<br/>
+<h1>  الرسم العقاري بعنوان </h1>
+<div *ngFor="let titre of titres">
+  <h2>{{titre.numtitre}}</h2> <h2>{{titre.gouv}}</h2>
+</div>
+<hr>
+<table id="users">
+  
+    <tr>
+      <th scope="col">
+        <div class="ion-text-end">
+          التفاصيل 
+        </div>
+        </th>
+        <th scope="col">
+          <div class="ion-text-end">
+            النوع 
+          </div>
+          </th>
+        <th scope="col">
+          <div class="ion-text-end">
+           الإدارة الماسكة للعقار 
+          </div>
+          </th>
+
+<tr *ngFor="let titre of titres">
+  <td>
+    <div class="ion-text-end">
+    {{titre.description}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{titre.type}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{titre.gouv}}
+  </div>
+  </td>
+</tr>
+</table>
+<ion-card>
+  <ion-button expand="block" [routerLink]="['/menuadmin']">رجوع
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button> 
+</ion-card>
+</ion-content>
+

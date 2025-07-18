@@ -1,0 +1,126 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+        الإعلام بحدوث خلل
+        <ion-icon name="bug-outline"></ion-icon>    
+      </div>            
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+          الإعلام بحدوث خلل    
+        </div>
+        <br/>
+      </ion-card-title>
+      <div class="ion-text-center">
+      من أجل الإعلام بحدوث خلل الرجاء منكم  ملء هذه الإستمارة بكل دقة
+      (سيتم إرسال إرسالية قصيرة على الرقم المذكور في الإستمارة)
+    </div>
+    </ion-card-header>
+    <div class="ion-text-center">
+     (يتراوح أجل الإستجابة لطلبكم من 1ساعة إلى 48 ساعة)
+    </div>
+    <br/>
+    </ion-card>
+
+    <form #reclamationForm="ngForm" (ngSubmit)="save(reclamationForm.value)">
+      <ion-input type="hidden" name="href" [(ngModel)]="reclamation.href">
+      </ion-input>
+      <ion-list>
+
+        <ion-item>
+          <ion-grid>
+        <ion-row class="ion-float-end">
+          <ion-col class="ion-float-end">
+            <div>  
+        <ion-item>
+        <ion-card>
+        <div class="ion-text-end">    
+        <ion-input type="number" 
+        onKeyUp="if(this.value>99999999){this.value='';}else if(this.value<0){this.value='';}"
+        id="yourid" name="numtel" placeholder="رقم الهاتف المحمول" [(ngModel)]="reclamation.numtel" required #numtel></ion-input>
+        </div>
+        </ion-card>
+        </ion-item>
+        </div>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-item>
+      
+
+      <ion-item>
+      <ion-grid>
+        <ion-row class="ion-float-center">
+          <ion-col class="ion-float-center">
+             
+       
+          
+            <div class="ion-text-end">
+              <ion-label> : نوع الخلل</ion-label>
+          <ion-select interface="action-sheet" cancel-text="رجوع" name="type" [(ngModel)]="reclamation.type" required #type>
+            <ion-select-option value="خطأ في الولوج إلى منصة الإطلاع على رسم عقاري">
+               <div class="ion-text-center">خطأ في الولوج إلى منصة الإطلاع على رسم عقاري</div>
+              </ion-select-option>
+            <ion-select-option value="خطأ في الولوج إلى منصة الإطلاع على ملخص العمليات">
+              <div class="ion-text-end">خطأ في الولوج إلى منصة الإطلاع على ملخص العمليات</div>
+              </ion-select-option>
+              <ion-select-option value="إقتطاع سعر إضافي على سعر العملية">
+                <div class="ion-text-end">إقتطاع سعر إضافي على سعر العملية</div>
+                </ion-select-option>
+                <ion-select-option value="عدم القدرة على الولوج إلى فضاء المواطن رغم وجود حساب">
+                  <div class="ion-text-end">عدم القدرة على الولوج إلى فضاء المواطن رغم وجود حساب</div>
+                  </ion-select-option>
+                  <ion-select-option value="رسم عقاري مسجل لكن غير موجود">
+                    <div class="ion-text-end">رسم عقاري مسجل لكن غير موجود</div>
+                    </ion-select-option>
+                    <ion-select-option value="خلل آخر">
+                    <div class="ion-text-end">خلل آخر</div>
+                    </ion-select-option>
+          </ion-select>
+        </div>    
+      
+      
+    
+  </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-item>
+
+<ion-item>
+<ion-grid>
+  <ion-row class="ion-float-end">
+    <ion-col class="ion-float-end">
+      <div>  
+  <ion-item>
+  <ion-card>
+  <div class="ion-text-end">
+    <ion-textarea type="textarea" maxlength="40" name="description" placeholder="الرجاء ذكر المعطيات الشخصية الخاصة بالخلل باختصار" [(ngModel)]="reclamation.description" required #description>   
+</ion-textarea> 
+</div>
+  </ion-card>
+  </ion-item>
+  </div>
+  </ion-col>
+  </ion-row>
+  <br/>
+</ion-grid>
+</ion-item>
+  
+</ion-list>
+  <ion-button type="submit" [disabled]="!reclamationForm.form.valid" expand="block">تأكيد
+    <ion-icon name="add-circle-outline"></ion-icon>
+  </ion-button>
+  
+  </form>
+  
+</ion-content>

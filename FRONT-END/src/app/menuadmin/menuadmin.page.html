@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">           
+         الصفحة الشخصية لفضاء الإداري
+        <ion-icon name="person-outline"></ion-icon>  
+      </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+          مرحبا بك في الفضاء الإداري
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-img src="{{tof.logo}}">      
+    </ion-img>
+  </ion-card>
+    </ion-content>
+<ion-menu side="end" contentId="content">
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      <div class="ion-text-end">
+      القائمة
+      <ion-icon name="list-circle-outline"></ion-icon>
+    </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-menu-toggle *ngFor="let m of menus">
+    <ion-item (click)="onMenuItem(m)">
+    <ion-icon [name]="m.icon" slot="end"></ion-icon>
+    <ion-title>
+      <div class="ion-text-end">
+      {{m.title}}
+    </div>
+    </ion-title>
+  </ion-item>
+  </ion-menu-toggle>
+</ion-content>
+</ion-menu>
+<ion-router-outlet id="content" ></ion-router-outlet>

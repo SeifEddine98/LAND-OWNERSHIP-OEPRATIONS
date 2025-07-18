@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+        إنشاء حساب جديد
+        <ion-icon name="person-add-outline"></ion-icon>
+            </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #clientForm="ngForm" (ngSubmit)="save(clientForm.value)">
+    <ion-input type="hidden" name="href" [(ngModel)]="client.href">
+    </ion-input>
+    <ion-grid>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+    <ion-input type="number" onKeyUp="if(this.value>99999999){this.value='';}else if(this.value<00000000){this.value='';}"
+ id="yourid" name="cin" placeholder="رقم بطاقة التعريف الوطنية" [(ngModel)]="client.cin" required #cin></ion-input>
+  </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+<ion-input type="text" maxlength="20" name="prenom" placeholder="الإسم " [(ngModel)]="client.prenom" required #prenom></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+<ion-input type="text" name="nom" maxlength="20"  placeholder="اللقب" [(ngModel)]="client.nom" required #nom></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+<ion-input type="email" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" placeholder="البريد الإلكتروني" [(ngModel)]="client.email" required #email></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<br/>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+<ion-input type="number"  
+onKeyUp="if(this.value>99){this.value='';}else if(this.value<0){this.value='';}"
+id="yourid"  name="age"  placeholder="العمر" [(ngModel)]="client.age" required #age></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<br/>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+<ion-input type="number" 
+onKeyUp="if(this.value>99999999){this.value='';}else if(this.value<0){this.value='';}"
+id="yourid" name="numTel" placeholder="رقم الهاتف المحمول" [(ngModel)]="client.numTel" required #numTel></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+    <ion-input type="text" maxlength="20" name="login" placeholder="اسم المستخدم" [(ngModel)]="client.login" required #login></ion-input>
+  </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+  <div>
+  <ion-item>
+    <ion-card>
+    <div class="ion-text-end">   
+  <ion-input type="password" maxlength="20" name="password" placeholder="كلمة السر" [(ngModel)]="client.password" required #password></ion-input>
+</div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" [disabled]="!clientForm.form.valid" expand="block">تأكيد
+  <ion-icon name="add-circle-outline"></ion-icon>
+</ion-button>
+
+</form>
+
+</ion-content>

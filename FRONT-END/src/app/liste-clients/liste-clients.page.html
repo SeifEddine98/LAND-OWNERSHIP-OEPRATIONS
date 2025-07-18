@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menuadmin"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+        قائمة المسجلين
+        <ion-icon name="list-circle"></ion-icon>           
+       </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+          البحث عن مشترك
+      </div>
+      </ion-card-title>
+    </ion-card-header>
+    </ion-card>
+    <form #clientForm="ngForm" (ngSubmit)="clientById()">
+      <ion-input type="hidden" name="href" [(ngModel)]="client.href">
+      </ion-input>
+      <ion-grid>
+  <ion-row class="ion-float-end">
+    <ion-col class="ion-float-end">
+      <div>  
+<ion-item>
+  <ion-card>
+  <div class="ion-text-end">    
+<ion-input type="text" name="code" placeholder="الرقم السري" [(ngModel)]="client.code" required #code></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" [disabled]="!clientForm.form.valid" >بحث
+  <ion-icon name="search-outline"></ion-icon>
+</ion-button>
+<ion-button  (click)="remove()" expand="block"  >حذف
+  <ion-icon name="trash-outline"></ion-icon>
+</ion-button>
+</form>
+<div *ngIf="isShown">
+  <ul>
+    <h5>
+      <li>{{clientRes.code}} : الرقم السري </li>
+      <li>{{clientRes.cin}} : رقم بطاقة التعريف الوطنية</li>
+      <li>{{clientRes.prenom}} : الإسم</li>
+      <li>{{clientRes.nom}} : اللقب</li>
+      <li>{{clientRes.email}} : البريد الإلكتروني</li>
+      <li>{{clientRes.age}} : العمر</li>
+      <li>{{clientRes.numTel}} : رقم الهاتف المحمول</li>
+</h5>
+</ul>
+</div>
+
+<br/>
+
+      <div class="ion-text-center">
+                     <h3>    قائمة الأشخاص المسجلين </h3>
+      </div>
+  <ion-list>
+  <ion-item *ngFor="let client of clients"> 
+    
+    {{client.code}} : الرقم السري    
+    <br/>
+    {{client.cin}} : رقم بطاقة التعريف الوطنية
+    <br/>
+    {{client.prenom}} : الإسم 
+    <br/>
+    {{client.nom}} : اللقب
+    <br/>
+    {{client.email}} : البريد الإلكتروني
+    <br/>
+    {{client.age}} : العمر
+    <br/>
+    {{client.numTel}} : رقم الهاتف المحمول
+    <br/>
+  
+
+  </ion-item>
+  </ion-list>
+
+
+
+</ion-content>

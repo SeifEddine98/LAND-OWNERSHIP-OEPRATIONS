@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title size="large">
+      <div class="ion-text-end">
+        الصفحة الرئيسية
+        <ion-icon name="clipboard-outline"></ion-icon>    
+      </div>            
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+          الديوان الوطني للملكية العقارية يرحب بك 
+      </div>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-img src="{{contact.logo}}">      
+    </ion-img>
+    <ion-img src="{{contact.localisation}}">      
+    </ion-img>
+  </ion-card>
+  <ion-card>
+    <ion-button expand="block" [routerLink]="['/inscription']">
+      إنشاء حساب جديد
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-button>
+    
+  </ion-card>
+  <ion-card>
+  <ion-button expand="block" [routerLink]="['/login']">تسجيل الدخول
+    <ion-icon name="log-in-outline"></ion-icon>
+  </ion-button> 
+</ion-card>
+<ion-card>
+  <ion-button color="medium" expand="block" [routerLink]="['/loginadmin']">  تسجيل الدخول الإداري
+    <ion-icon name="log-in-outline"></ion-icon>
+  </ion-button> 
+</ion-card>
+</ion-content>

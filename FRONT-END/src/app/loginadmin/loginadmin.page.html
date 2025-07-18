@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title size="large">
+      <div class="ion-text-end">
+           تسجيل الدخول الإداري
+        <ion-icon name="log-in-outline"></ion-icon>
+      </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card>
+    <ion-img src="{{contact2.authent}}">      
+    </ion-img>
+  </ion-card> 
+  <form #clientForm="ngForm" (ngSubmit)="save(clientForm.value)">
+    <ion-input type="hidden" name="href" [(ngModel)]="admin.href">
+    </ion-input>
+    <ion-grid>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+        <ion-input type="text" name="login" placeholder="اسم المستخدم" [(ngModel)]="admin.login" required #login></ion-input>
+  </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+  <div>
+  <ion-item>
+    <ion-card>
+    <div class="ion-text-end">   
+      <ion-input type="password" name="password" placeholder="كلمة السر" [(ngModel)]="admin.password" required #password></ion-input>
+    </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" expand="block" [disabled]="!clientForm.form.valid">تسجيل الدخول
+  <ion-icon name="log-in-outline"></ion-icon>
+</ion-button>
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+  <ion-button expand="block" [routerLink]="['/home']">رجوع
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button> 
+
+</ion-content>

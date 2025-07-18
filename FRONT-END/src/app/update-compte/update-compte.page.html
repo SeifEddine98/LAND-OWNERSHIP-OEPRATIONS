@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menuadmin"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+        تحديث الحساب
+        <ion-icon name="refresh-circle-outline"></ion-icon>
+      </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #clientForm="ngForm" (ngSubmit)="clientById()">
+    <ion-grid>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+        <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+    <ion-input type="text" [(ngModel)]="client.code" name="code" placeholder="الرقم السري" ></ion-input>
+  </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-card>
+  
+<ion-button type="submit" [disabled]="!clientForm.form.valid" expand="block" >  بحث
+<ion-icon name="search"></ion-icon>
+ </ion-button>
+
+</ion-card>
+  </form>
+  <form #clientFormUpdate="ngForm" (ngSubmit)="this.update(clientFormUpdate.value)">
+    <ion-grid>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+        <ion-input type="number" onKeyUp="if(this.value>99999999){this.value='';}else if(this.value<00000000){this.value='';}"
+          id="yourid" name="cin" placeholder="رقم بطاقة التعريف الوطنية" [(ngModel)]="client.cin" required value={{client1.cin}} #cin></ion-input>
+      </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+  <ion-input type="text" maxlength="20" name="prenom" placeholder="الإسم " [(ngModel)]="client.prenom" required value={{client1.prenom}} #prenom></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+  <ion-input type="text" maxlength="20" name="nom" placeholder="اللقب" [(ngModel)]="client.nom" required value={{client1.nom}} #nom></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+  <ion-input type="email" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" placeholder="البريد الإلكتروني" [(ngModel)]="client.email" required value={{client1.email}} #email></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+  <ion-input type="number" onKeyUp="if(this.value>99){this.value='';}else if(this.value<0){this.value='';}"
+    id="yourid" name="age" placeholder="العمر" [(ngModel)]="client.age" required value={{client1.age}} #age></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+    <div>  
+<ion-item>
+<ion-card>
+<div class="ion-text-end">    
+  <ion-input type="number" onKeyUp="if(this.value>99999999){this.value='';}else if(this.value<0){this.value='';}"
+    id="yourid" name="numTel" placeholder="رقم الهاتف المحمول" [(ngModel)]="client.numTel" required value={{client1.numTel}} #numTel></ion-input>
+</div>
+</ion-card>
+</ion-item>
+</div>
+</ion-col>
+</ion-row>
+      <ion-row class="ion-float-end">
+        <ion-col class="ion-float-end">
+          <div>  
+    <ion-item>
+      <ion-card>
+      <div class="ion-text-end">    
+        <ion-input type="text" maxlength="20" name="login" placeholder="اسم المستخدم" [(ngModel)]="client.login" required value={{client1.login}} #login></ion-input>
+      </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+<ion-row class="ion-float-end">
+  <ion-col class="ion-float-end">
+  <div>
+  <ion-item>
+    <ion-card>
+    <div class="ion-text-end">   
+      <ion-input type="password" maxlength="20" name="password" placeholder="كلمة السر" [(ngModel)]="client.password" required value={{client1.password}} #password></ion-input>
+    </div>
+</ion-card>
+  </ion-item>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-button type="submit" [disabled]="!clientFormUpdate.form.valid" expand="block">
+ تأكيد التحديث 
+ <ion-icon name="refresh-circle-outline"></ion-icon>
+</ion-button>
+
+</form>
+
+</ion-content>

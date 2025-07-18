@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+         إستخلاص معاليم الإطلاع على رسم 
+         <ion-icon name="card-outline"></ion-icon>
+              </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+          سعر هذه العملية حدد ب3 دنانير 
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-center">
+الرجاء إختيار طريقة الدفع المستعملة في هذه العملية
+     
+</div>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-img src="{{imge.choix}}">      
+    </ion-img>
+    </ion-card>
+  
+  <ion-list>
+    <ion-radio-group value="biff">
+      <ion-list-header>
+        <ion-label>
+          <div class="ion-text-center">
+              : طريقة الدفع
+            </div>
+        </ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>
+          <div class="ion-text-end"> بواسطة البطاقة البريدية  </div>
+        </ion-label>
+        <ion-radio slot="start" ></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <div class="ion-text-end">  بواسطة البطاقة البنكية </div>
+        </ion-label>
+        <ion-radio slot="start" ></ion-radio>
+      </ion-item>
+  
+    </ion-radio-group>
+  </ion-list>
+  <ion-button expand="block" [routerLink]="['/paiement']">تأكيد
+    <ion-icon name="log-in-outline"></ion-icon>
+  </ion-button> 
+</ion-content>

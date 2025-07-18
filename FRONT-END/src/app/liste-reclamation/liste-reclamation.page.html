@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menuadmin"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">
+      <div class="ion-text-end">
+        قائمة الأخطاء 
+                <ion-icon name="build-outline"></ion-icon>    
+      </div>            
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <h1>
+        <div class="ion-text-center">
+       قائمة الأخطاء المسجلة 
+        </div>
+      </h1>
+      </ion-card-title>
+    </ion-card-header>
+    </ion-card>
+  
+<hr>
+<table id="users">
+  
+    <tr>
+      <th scope="col">
+        <div class="ion-text-end">
+          الوصف 
+        </div>
+        </th>
+        <th scope="col">
+          <div class="ion-text-end">
+            نوع الخلل 
+          </div>
+          </th>
+        <th scope="col">
+          <div class="ion-text-end">
+           رقم الهاتف
+          </div>
+          </th>
+    </tr>
+
+
+<tr *ngFor="let reclamation of reclamations">
+  <td>
+    <div class="ion-text-end">
+    {{reclamation.description}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{reclamation.type}}
+    </div>
+  </td>
+  <td>
+    <div class="ion-text-end">
+    {{reclamation.numtel}}
+  </div>
+  </td>
+  
+</tr>
+</table>
+
+</ion-content>
